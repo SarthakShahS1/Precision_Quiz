@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎯 Precision Quiz - Gemini</title>
+    <link rel="stylesheet" href="assets/styles/main.css">
+</head>
+<body class="theme-light">
+    <button id="theme-toggle" class="theme-toggle">🌙</button>
+    <header class="header">
+        <div class="container">
+            <h1>🎯 Precision Quiz</h1>
+            <p>🤖 Powered by Gemini AI</p>
+        </div>
+    </header>
+    <main class="main">
+        <div class="container">
+            <div class="steps">
+                <div class="step active" data-step="upload"><span class="num">1</span>Upload</div>
+                <div class="step" data-step="configure"><span class="num">2</span>Configure</div>
+                <div class="step" data-step="quiz"><span class="num">3</span>Quiz</div>
+                <div class="step" data-step="results"><span class="num">4</span>Results</div>
+            </div>
+            <section id="upload-section" class="section active">
+                <div class="card">
+                    <h2>📄 Upload PDF/DOCX</h2>
+                    <p class="text-muted">Gemini will generate MCQs from your document</p>
+                    <div id="upload-area" class="upload-area">
+                        <div class="upload-icon">📁</div>
+                        <h3>Click or drag & drop</h3>
+                        <p class="text-muted">PDF/DOCX • Max 50MB</p>
+                        <input type="file" id="file-input" accept=".pdf,.docx" />
+                    </div>
+                    <div class="divider">OR TRY SAMPLE</div>
+                    <div id="samples" class="samples-grid"></div>
+                </div>
+            </section>
+            <section id="configure-section" class="section hidden">
+                <div class="card">
+                    <h2>⚙️ Configure</h2>
+                    <div id="doc-info" class="doc-info"></div>
+                    <div class="config-group">
+                        <h3>📊 Questions</h3>
+                        <div class="btn-group" id="count-buttons">
+                            <button class="btn-opt" data-count="3">3</button>
+                            <button class="btn-opt active" data-count="5">5</button>
+                            <button class="btn-opt" data-count="10">10</button>
+                            <button class="btn-opt" data-count="15">15</button>
+                        </div>
+                    </div>
+                    <div class="config-group">
+                        <h3>🎚️ Difficulty</h3>
+                        <div class="btn-group" id="difficulty-buttons">
+                            <button class="btn-opt" data-difficulty="easy">Easy</button>
+                            <button class="btn-opt active" data-difficulty="medium">Medium</button>
+                            <button class="btn-opt" data-difficulty="hard">Hard</button>
+                        </div>
+                    </div>
+                    <button id="generate-btn" class="btn btn-primary btn-large">🤖 Generate with Gemini</button>
+                </div>
+            </section>
+            <section id="quiz-section" class="section hidden">
+                <div class="card">
+                    <div class="progress-info"><span id="question-num">Q 1 of 5</span><span id="progress-pct">20%</span></div>
+                    <div class="progress-bar"><div id="progress-fill"></div></div>
+                    <div id="quiz-content"></div>
+                    <div class="quiz-nav">
+                        <button id="prev-btn" class="btn btn-secondary hidden">← Prev</button>
+                        <span id="timer">⏱️ 0:00</span>
+                        <button id="next-btn" class="btn btn-primary">Next →</button>
+                        <button id="finish-btn" class="btn btn-success hidden">✓ Finish</button>
+                    </div>
+                </div>
+            </section>
+            <section id="results-section" class="section hidden">
+                <div class="card">
+                    <h2>📊 Results</h2>
+                    <div id="score-summary"></div>
+                    <div id="results-details"></div>
+                    <div class="action-buttons">
+                        <button id="download-btn" class="btn btn-primary">📄 Download</button>
+                        <button id="certificate-btn" class="btn btn-success">🏆 Certificate</button>
+                        <button id="new-quiz-btn" class="btn btn-outline">🔄 New Quiz</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer class="footer"><p>🎯 Precision Quiz v3.0 | Powered by Gemini AI</p></footer>
+    <script src="scripts/app.js"></script>
+</body>
+</html>
