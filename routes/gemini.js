@@ -1,7 +1,11 @@
 import express from 'express';
 import multer from 'multer';
+import dotenv from 'dotenv';
 import { GeminiService } from '../lib/gemini.js';
 import { validateFile, validateMcqRequest } from '../lib/validators.js';
+
+// Ensure environment variables are loaded
+dotenv.config();
 
 const router = express.Router();
 const upload = multer({storage: multer.memoryStorage(), limits:{fileSize:50*1024*1024}});
